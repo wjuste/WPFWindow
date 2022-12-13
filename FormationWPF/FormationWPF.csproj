@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,6 +57,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Controles\01_ControlesCommunsWPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\02_Media.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -81,6 +86,9 @@
     </Compile>
     <Compile Include="Controles\01_ControlesCommunsWPF.xaml.cs">
       <DependentUpon>01_ControlesCommunsWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\02_Media.xaml.cs">
+      <DependentUpon>02_Media.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controles\NumericUpDown.xaml.cs">
       <DependentUpon>NumericUpDown.xaml</DependentUpon>
@@ -170,6 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MediaImages\Water fallback.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

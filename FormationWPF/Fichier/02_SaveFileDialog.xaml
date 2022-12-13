@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:FormationWPF.Fichier"
         mc:Ignorable="d"
         Title="_02_SaveFileDialog" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel Margin="10">
+        <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
+            <Button x:Name="btnSaveFile" Click="btnSaveFile_Click">Save File</Button>
+        </WrapPanel>
+        <TextBox Name="txtEditor" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="10"/>
+    </DockPanel>
 </Window>

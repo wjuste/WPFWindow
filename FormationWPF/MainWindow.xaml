@@ -30,12 +30,14 @@
 
             <MenuItem x:Name="mControle" Header="Controles">
                 <MenuItem x:Name="miControleCommun" Header="Les contrôles communs" Click="miControleCommun_Click" Background="Black" />
+                <MenuItem x:Name="miMedia" Header="Image - MediaElement" Click="miMedia_Click" Background="Black" />
             </MenuItem>
 
             <MenuItem x:Name="mFichier" Header="Fichier">
                 <MenuItem x:Name="miOuvrir" Header="Ouvrir" Click="miOuvrir_Click" Background="Black" />
                 <MenuItem x:Name="miEnregistrer" Header="Enregistrer" Click="miEnregistrer_Click" Background="Black" />
             </MenuItem>
+
         </Menu>
         
     </DockPanel>

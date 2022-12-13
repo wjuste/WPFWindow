@@ -130,5 +130,11 @@ namespace FormationWPF
             _02_SaveFileDialog saveFileDialog = new _02_SaveFileDialog();
             saveFileDialog.ShowDialog();
         }
+
+        private void miMedia_Click(object sender, RoutedEventArgs e)
+        {
+            _02_Media media = new _02_Media();
+            media.ShowDialog();
+        }
     }
 }
