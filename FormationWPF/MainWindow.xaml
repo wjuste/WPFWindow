@@ -6,7 +6,37 @@
         xmlns:local="clr-namespace:FormationWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <DockPanel LastChildFill="False">
+        <Menu x:Name="menu1" Height="30" Width="Auto" DockPanel.Dock="Top" Background="Black" Foreground="White">
+           
+            <MenuItem x:Name="mFenetre" Header="Fenetre">
+                <MenuItem x:Name="miModale" Header="Modal" Click="miModale_Click" Background="Black" />
+                <MenuItem x:Name="miNonModale" Header="Non Modal" Click="miNonModale_Click" Background="Black" />
+                <MenuItem x:Name="miBoiteSimpte" Header="Boite de dialogue Simple" Click="miBoiteSimpte_Click" Background="Black" />
+                <MenuItem x:Name="miBoiteP" Header="Boite de dialogue personnalisée" Click="miBoiteP_Click" Background="Black" />
+                <Separator />
+                <MenuItem x:Name="miQuitter" Header="Quitter" Click="miQuitter_Click" Background="Black" />
+            </MenuItem>
+
+            <MenuItem x:Name="mMiseEnPage" Header="Mise en page">
+                <MenuItem x:Name="miAncrage" Header="Ancrage" Click="miAncrage_Click" Background="Black" />
+                <MenuItem x:Name="miStackP" Header="StackPanel" Click="miStackP_Click" Background="Black" />
+                <MenuItem x:Name="miWrapPanel" Header="WrapPanel" Click="miWrapPanel_Click" Background="Black" />
+                <MenuItem x:Name="miDockPanel" Header="DockPanel" Click="miDockPanel_Click" Background="Black" />
+                <MenuItem x:Name="miGrid" Header="Grid" Click="miGrid_Click" Background="Black" />
+                <MenuItem x:Name="miCanvas" Header="Canvas" Click="miCanvas_Click" Background="Black" />
+            </MenuItem>
+
+
+            <MenuItem x:Name="mControle" Header="Controles">
+                <MenuItem x:Name="miControleCommun" Header="Les contrôles communs" Click="miControleCommun_Click" Background="Black" />
+            </MenuItem>
+
+            <MenuItem x:Name="mFichier" Header="Fichier">
+                <MenuItem x:Name="miOuvrir" Header="Ouvrir" Click="miOuvrir_Click" Background="Black" />
+                <MenuItem x:Name="miEnregistrer" Header="Enregistrer" Click="miEnregistrer_Click" Background="Black" />
+            </MenuItem>
+        </Menu>
         
-    </Grid>
+    </DockPanel>
 </Window>

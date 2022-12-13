@@ -63,6 +63,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Fichier\01_OpenFileDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fichier\02_SaveFileDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,6 +84,12 @@
     </Compile>
     <Compile Include="Controles\NumericUpDown.xaml.cs">
       <DependentUpon>NumericUpDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fichier\01_OpenFileDialog.xaml.cs">
+      <DependentUpon>01_OpenFileDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fichier\02_SaveFileDialog.xaml.cs">
+      <DependentUpon>02_SaveFileDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -105,6 +119,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NavigationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MiseEnPage\01_Ancrage.xaml.cs">
@@ -124,6 +142,9 @@
     </Compile>
     <Compile Include="MiseEnPage\06_Canvas.xaml.cs">
       <DependentUpon>06_Canvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationWindow.xaml.cs">
+      <DependentUpon>NavigationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
