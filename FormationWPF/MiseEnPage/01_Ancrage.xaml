@@ -1,0 +1,24 @@
+﻿<Window x:Class="FormationWPF.MiseEnPage._01_Ancrage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormationWPF.MiseEnPage"
+        mc:Ignorable="d"
+        Title="_01_Ancrage" Height="300" Width="400">
+    <Grid>
+        <!-- pour ancrer des éléments 
+         voir les propriétés :
+            HorizontalAlignment="Left - Center  Right - Stretch (impose le contrôle d'utiliser tout l'espace disponible") 
+            VerticalAlignment="Top, Center, Bottom - Stretch"
+        
+         •	Margin 
+                o	Le décaler par rapport à sa position normale
+                o	Valeur associé associée à cette propriété  : Gauche, haut, droite, bas
+        -->
+        <Button Content="Button 1"  Width="75" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,12,0,0" Background="Aqua" Foreground="Brown"/>
+        <Button Content="Button 2" Width="75" Height="23" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,12,26,0" Background="Chartreuse" Foreground="Brown"/>
+        <Button Content="Button 3" Width="75" Height="23" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="26,0,0,12" Background="Linen" Foreground="Brown"/>
+        <Button Content="Button 4" Width="75" Height="23" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,26,12" Background="Black" Foreground="Wheat"/>
+    </Grid>
+</Window>

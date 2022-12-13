@@ -1,0 +1,23 @@
+﻿<Window x:Class="FormationWPF.MiseEnPage._03_WrapPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormationWPF.MiseEnPage"
+        mc:Ignorable="d"
+        Title="_03_WrapPanel" Height="120" Width="300">
+    <WrapPanel Orientation="Vertical">
+        <!--
+               idem que le stackPanel sauf qu'il y aura un wrap en bout de ligne
+               (saut de ligne) -
+               le centrage est effectué en rapport avec l'élément le plus large 
+               Positionne chacun de ses contrôles enfant l'un à  côté de l'autre  Horizontalement (par défaut)
+    -->
+        <Button Content="Button1" Width="75" Height="23" Background="White"/>
+        <Button Content="Button2" Width="75" Height="23"/>
+        <Button Content="Button3" Width="150" Height="23"/>
+        <Button Content="Button4" Width="75" Height="23"/>
+        <Button Content="Button5" Width="100" Height="23"/>
+        <Button Content="Button6" Width="75" Height="23"/>
+    </WrapPanel>
+</Window>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="FormationWPF.MiseEnPage._06_Canvas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormationWPF.MiseEnPage"
+        mc:Ignorable="d"
+        Title="_06_Canvas" Height="300" Width="300">
+    <Grid>
+        <!--
+            Le contrôle Canvas est destiné à contenir des contrôles enfants positionnées de manière absolue
+            Le positionnement des éléments est mis en oeuvre à l'aide des propriétés  : 
+             Canvas.Top, Canvas.Left, Canvas.Right, Canvas.Botttom  -->
+        <Canvas>
+            <Button Canvas.Left="10" Canvas.Top="10">Top Left</Button>
+            <Button Canvas.Right="10" Canvas.Top="10">Top Right</Button>
+            <Button Canvas.Left="10" Canvas.Bottom="10">Bottom Left</Button>
+            <Button Canvas.Bottom="10" Canvas.Right="10">Bottom Right</Button>
+        </Canvas>
+    </Grid>
+</Window>
