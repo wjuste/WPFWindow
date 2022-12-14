@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FormationWPF.MiseEnForme"
         mc:Ignorable="d"
-        Title="_02_MiseEnFormeApp" Height="500" Width="800">
+        Title="_02_MiseEnFormeApp" Height="550" Width="800">
     <StackPanel>
         <!--Utilisation des styles-->
         <Label Content="Utilisation des tyles : " Height="28" x:Name="label1"/>
@@ -32,8 +32,9 @@
         <Label Content="Utilisation de Template: " Height="28" x:Name="label5"/>
         <Button Content="Submit" Height="50" Width="125" x:Name="button4" Template="{StaticResource MyTemplate}"/>
         
-        <Button />
-
+        <Button Content="Submit" Height="70" x:Name="button5" Width="125" Margin="0,40,0,0" Template="{StaticResource buttonEllipseTemplate}" />
+        
+        
 
     </StackPanel>
 

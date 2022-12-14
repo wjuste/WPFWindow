@@ -62,11 +62,52 @@
                 <!--La  transformation se fera au centre de l' élément en definissant  la propriété RenderTransformOrigin (0,5, 0,5), -->
                 <Setter Property="RenderTransformOrigin" Value="0.5, 0.5" />
             </Trigger>
-
         </ControlTemplate.Triggers>
-        
-        
-        
     </ControlTemplate>
 
+    
+    
+    
+    <ControlTemplate x:Key="buttonEllipseTemplate" TargetType="{x:Type Button}">
+        <Grid>
+            <Ellipse x:Name="outerCircle" Width="70" Height="70">
+                <Ellipse.Fill>
+                    <LinearGradientBrush StartPoint="0, 0.5" EndPoint="1, 0.5">
+                        <GradientStop Offset="0" Color="Blue"/>
+                        <GradientStop Offset="0.4" Color="White"/>
+                        <GradientStop Offset="0.6" Color="White"/>
+                        <GradientStop Offset="1" Color="Red"/>
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <ContentPresenter  Content="{TemplateBinding Button.Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="Button.IsMouseOver" Value="true">
+                <Setter TargetName="outerCircle" Property="Fill" >
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0, 0.2" EndPoint="0.2,1">
+                            <GradientStop Offset="0" Color="Green"/>
+                            <GradientStop Offset="0.4" Color="Yellow"/>
+                            <GradientStop Offset="0.6" Color="Yellow"/>
+                            <GradientStop Offset="1" Color="Red"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="Button.IsPressed" Value="true">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+
+
+    </ControlTemplate>
+
+    
 </ResourceDictionary>
