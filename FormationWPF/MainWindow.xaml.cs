@@ -1,6 +1,7 @@
 ﻿using FormationWPF.Binding;
 using FormationWPF.Controles;
 using FormationWPF.Fichier;
+using FormationWPF.MiseEnForme;
 using FormationWPF.MiseEnPage;
 using System;
 using System.Collections.Generic;
@@ -160,6 +161,18 @@ namespace FormationWPF
         {
             _04_RespondingToChange respondingToChange = new _04_RespondingToChange();
             respondingToChange.ShowDialog();
+        }
+
+        private void mRessourceBase_Click(object sender, RoutedEventArgs e)
+        {
+            _01_WindowResource resource =  new _01_WindowResource();
+            resource.ShowDialog();
+        }
+
+        private void mMiseEnFormeApp_Click(object sender, RoutedEventArgs e)
+        {
+            _02_MiseEnFormeApp styleTemplate = new _02_MiseEnFormeApp();
+            styleTemplate.ShowDialog();
         }
     }
 }

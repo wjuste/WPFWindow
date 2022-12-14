@@ -45,7 +45,14 @@
                 <MenuItem x:Name="miRespondingToChange" Header="Responding to change" Click="miRespondingToChange_Click"  Background="Black" />
             </MenuItem>
 
+
+            <MenuItem x:Name="mRessources" Header="Mise en forme">
+                <MenuItem x:Name="mRessourceBase" Header="StaticResource  - DynamicResource" Click="mRessourceBase_Click" Background="Black" />
+                <MenuItem x:Name="mMiseEnFormeApp" Header="Style - Template" Click="mMiseEnFormeApp_Click" Background="Black" />
+            </MenuItem>
+
         </Menu>
-        
+
+
     </DockPanel>
 </Window>

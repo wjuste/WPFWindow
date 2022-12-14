@@ -132,6 +132,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MiseEnForme\01_WindowResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MiseEnForme\02_MiseEnFormeApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MiseEnPage\01_Ancrage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,8 +168,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Ressources\Style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MiseEnForme\01_WindowResource.xaml.cs">
+      <DependentUpon>01_WindowResource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MiseEnForme\02_MiseEnFormeApp.xaml.cs">
+      <DependentUpon>02_MiseEnFormeApp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MiseEnPage\01_Ancrage.xaml.cs">
       <DependentUpon>01_Ancrage.xaml</DependentUpon>
     </Compile>
@@ -213,6 +231,7 @@
     <Resource Include="MediaImages\Water fallback.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="MiseEnForme\Ressources.txt" />
     <Resource Include="Binding\Binding.txt" />
     <Content Include="MediaImages\SampleVideo1.mp4" />
     <Content Include="MediaImages\TT++ - Piste 12 - V1 Douce.wma" />

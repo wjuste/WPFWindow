@@ -19,7 +19,14 @@
                  ==> Aucune modification est refletée sur l'interface graphique 
          
         Deuxième étape : Utilisation de ObservableCollection
+                 ==> Incapable  d'alerter la couche d'interface utilisateur des modifications apportées à ses propriétés.
         
+          Troisième étape : Utilisation de l'interface INotifyPropertyChanged
+             Cette interface met à disposition l’événement PropertyChanged qu’il faut déclencher chaque fois
+            qu’une propriété est modifiée
+            On va implementer donc notre classe User avec l'interface INotifyPropertyChanged
+            En faisant cela, nos objets Users  seront capables d'alerter la couche d'interface utilisateur 
+            des modifications apportées à ses propriétés.
         -->
 
         <StackPanel DockPanel.Dock="Right" Margin="10">

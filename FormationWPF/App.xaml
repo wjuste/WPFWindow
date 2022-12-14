@@ -4,6 +4,17 @@
              xmlns:local="clr-namespace:FormationWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!--On attribut à la ressource (de type SolidColorBrush) une clé ainsi on pourra la referencer 
+        au niveau de la fenêtre (ex: dans un contrôle Bouton)-->
+       <!-- <SolidColorBrush x:Key="backgroundBrush" Color="Coral" />
+        <SolidColorBrush x:Key="backgroundBrushDyn" Color="MediumAquamarine" />-->
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Ressources/Style.xaml" />
+                <!--On peut ajouter d'autres ressources (Styles - templates)-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
     </Application.Resources>
 </Application>

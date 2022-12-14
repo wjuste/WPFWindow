@@ -1,0 +1,112 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--On attribut à la ressource (de type SolidColorBrush) une clé ainsi on pourra la referencer 
+        au niveau de la fenêtre (ex: dans un contrôle Bouton)-->
+    <SolidColorBrush x:Key="backgroundBrush" Color="Coral" />
+    <SolidColorBrush x:Key="backgroundBrushDyn" Color="MediumAquamarine" />
+
+    <!--
+       Si on fait une comparaison avec le Web. 
+        Le XAML est très similaire au HTML
+        Le style au CSS
+        
+        En utilisant les styles, vous pouvez grouper un ensemble de propriétés et les assigner à des contrôles d'un 
+        type spécifique, et comme en CSS, un style peut hériter d'un autre style.
+    
+        Les styles ont un ensemble de propriétés ; ici, on va placer quelques-unes des propriétés utilisées fréquemment et 
+        importantes.
+                Setters: définit/modifie les valeurs de propriété
+                Triggers: modifie les paramètres de style
+                Resources: obtient ou définit une collection de ressources que vous pouvez utiliser
+                BasedOn: crée un style spécialisé qui hérite des paramètres d'un autre style
+                TargetType: obtient ou définit le contrôle auquel le style est destiné. 
+    -->
+    
+    
+    <!--Style-->
+    <Style x:Key="MonStyleBleu">
+        <Setter Property="Button.Background" Value="#FF00CAFF" />
+        <Setter Property="Control.Margin" Value="5"/>
+        <Setter Property="Button.FontWeight" Value="Bold" />
+        <Setter Property="Button.FontSize" Value="14" />
+    </Style>
+    
+    <!--Heritage de Style-->
+    <Style x:Key="MonStyleBleuEnfant" BasedOn="{StaticResource ResourceKey=MonStyleBleu}" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="AZURE"/>
+        <Setter Property="ItemsControl.Padding" Value="1" />
+    </Style>
+
+    <!--Triggers-->
+    <!--Ecouteur d'évenement sur une valeur de proprités-->
+    <!--
+            Les styles ci-dessus  définissent une valeur statique pour une propriété spécifique. 
+            Cependant, à l'aide de déclencheurs (Trigger), vous pouvez modifier la valeur d'une propriété donnée. 
+            Les Triggers se présentent sous plusieurs formes : 
+            Property triggers, event triggers et data triggers. 
+            Ils vous permettent de faire des choses qui seraient normalement faites dans le code-behind.
+        -->
+    
+    <!--PropertyTrigger-->
+    <Style x:Key="TriggerStyle" TargetType="Button">
+        
+        <Setter Property="Foreground" Value="IndianRed"/>
+        <Setter Property="FontWeight" Value="Bold" />
+        
+        <Style.Triggers>
+            <!--
+                Nous appliquons un trigger qui ecoute la propriété IsMouseOver 
+                Une fois que la propriété passe à true, on applique les setters pour le Bouton
+            -->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="CadetBlue"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Trigger>
+            
+        </Style.Triggers>
+        
+    </Style>
+
+    <!--Multi-trigger :  idem que property-triggers à l'exception 
+            qu'ils monitorent plusieurs propriétés en même temps
+          NB. : le trigger déclenchera les setters lorsque toutes les propriétés surveillées auront 
+        la valeur attendue
+        
+        Exple : chgt de background si mouse over et focus
+    -->
+    <Style x:Key="MyMultiTrigger" TargetType="TextBox">
+        <Setter Property="Foreground"  Value="DarkViolet"/>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True" />
+                    <Condition Property="IsKeyboardFocused" Value="True" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter  Property="Background" Value="CornflowerBlue" />
+                    <Setter Property="Foreground" Value="BlanchedAlmond"/>
+                    <Setter Property="FontSize" Value="14" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+       
+        <!--
+            DataTrigger = monitoring d'une "valeur" de 
+                          propriété liée (bound property)
+            Un Data Triggers exécute certaines actions lorsque les données liées (bind) satisfont une certaine condition.
+        -->
+    <Style x:Key="MyDataTrigger" TargetType="TextBlock">
+        <Setter Property="Text" Value="No"/>
+        <Setter Property="Foreground" Value="Red" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=checkBox1, Path=IsChecked}" Value="true">
+                <Setter Property="Text" Value="Yes" />
+                <Setter Property="Foreground" Value="Green" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="FormationWPF.MiseEnForme._02_MiseEnFormeApp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormationWPF.MiseEnForme"
+        mc:Ignorable="d"
+        Title="_02_MiseEnFormeApp" Height="500" Width="800">
+    <StackPanel>
+        <!--Utilisation des styles-->
+        <Label Content="Utilisation des tyles : " Height="28" x:Name="label1"/>
+        <Button Content="Btn stylé ressources " Height="30" Width="200" x:Name="button1" Style="{StaticResource MonStyleBleu}"/>
+        <Button Content="Btn stylé ressources " Height="30" Width="200" x:Name="button2" Style="{StaticResource MonStyleBleuEnfant}"/>
+
+        <!--Property - Trigger -->
+        <Label Content="Utilisation de Property - Trigger: " Height="28" x:Name="label2"/>
+        <Button Content="Survolez-moi " Height="30" Width="200" x:Name="button3" Style="{StaticResource TriggerStyle}"/>
+
+        <!--Multi-Trigger-->
+        <Label Content="Utilisation de MultiTrigger : " Height="28" x:Name="label3"/>
+        <TextBox Text="Test multi (Over and Focus here)" Height="24" x:Name="textBox1" Width="200" Style="{StaticResource MyMultiTrigger}"/>
+
+        <!--DataTrigger-->
+        <Label Content="Utilisation de Data-Trigger : " Height="28" x:Name="label4"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <CheckBox x:Name="checkBox1"  Content="Hello World ??"/>
+            <TextBlock FontSize="30" Style="{StaticResource MyDataTrigger }" />
+        </StackPanel>
+
+
+    </StackPanel>
+</Window>

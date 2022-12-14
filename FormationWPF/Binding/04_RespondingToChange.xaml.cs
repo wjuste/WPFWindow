@@ -61,7 +61,13 @@ namespace FormationWPF.Binding
 
         private void btnChangeUser_Click(object sender, RoutedEventArgs e)
         {
-
+            if(lstUsers.SelectedItem != null)
+            {
+                (lstUsers.SelectedItem as User).UserName = "Random Name";
+            } else
+            {
+                MessageBox.Show("Veuillez selectionner un User");
+            }
         }
     }
 }

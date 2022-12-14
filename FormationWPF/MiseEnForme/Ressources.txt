@@ -1,0 +1,21 @@
+﻿ Avec les Ressources : 
+                WPF introduit le concept très pratique permettant de sauvegarder des données en tant que ressource, 
+                soit localement au niveau du contrôle, ou de la fenêtre ou encore globalement au niveau de l'application
+                entière. 
+                Avec les ressources, on peut placer des données dans un endroit spécifique et les utiliser ensuite.
+                Ce concept est beaucoup utilisé pour les "Styles" et les "Templates"
+                Comprendre les ressources nous permettra de réutiliser des objets tels que les Styles et les Templates
+        
+
+                Il existe deux types de ressources que nous allons voir  : 
+                    - RESSOURCES STATIQUE : 
+                        Les ressources statiques sont les ressources que vous ne pouvez pas manipuler au moment de l'éxecution.
+                        Les ressources statiques ne sont évaluées qu'une seule fois par l'élément qui les références 
+                        lors du chargement de XAML.
+
+                    - RESSOURCE DYNAMIQUE
+                        Les ressources dynamiques sont les ressources que vous pouvez manipuler  et 
+                         évaluées au moment de l'execution. 
+                        Si votre code behind modifie la ressource, les éléments faisant référence aux ressources en tant 
+                        que ressources dynamiques se chargeront également
+                -->
