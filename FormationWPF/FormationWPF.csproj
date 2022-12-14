@@ -72,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Binding\05_BindingWindowExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controles\01_ControlesCommunsWPF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -112,6 +116,9 @@
     <Compile Include="Binding\04_RespondingToChange.xaml.cs">
       <DependentUpon>04_RespondingToChange.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Binding\05_BindingWindowExample.xaml.cs">
+      <DependentUpon>05_BindingWindowExample.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controles\01_ControlesCommunsWPF.xaml.cs">
       <DependentUpon>01_ControlesCommunsWPF.xaml</DependentUpon>
     </Compile>
@@ -121,6 +128,7 @@
     <Compile Include="Controles\NumericUpDown.xaml.cs">
       <DependentUpon>NumericUpDown.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\MyMultiBindingValueConverter.cs" />
     <Compile Include="Converters\YesNoToBooleanConverter.cs" />
     <Compile Include="Fichier\01_OpenFileDialog.xaml.cs">
       <DependentUpon>01_OpenFileDialog.xaml</DependentUpon>

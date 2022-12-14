@@ -174,5 +174,11 @@ namespace FormationWPF
             _02_MiseEnFormeApp styleTemplate = new _02_MiseEnFormeApp();
             styleTemplate.ShowDialog();
         }
+
+        private void miBindingWindowExample_Click(object sender, RoutedEventArgs e)
+        {
+            _05_BindingWindowExample bindingWindowExample = new _05_BindingWindowExample();
+            bindingWindowExample.ShowDialog();
+        }
     }
 }

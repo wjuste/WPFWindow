@@ -43,6 +43,8 @@
                 <MenuItem x:Name="miUpdateSourceTrigger" Header="UpdateSourceTrigger: PropertyChange - LostFocus - Explicit" Click="miUpdateSourceTrigger_Click"  Background="Black" />
                 <MenuItem x:Name="miValueConverter" Header="Convertisseur simple, avec IValueConverter" Click="miValueConverter_Click"  Background="Black" />
                 <MenuItem x:Name="miRespondingToChange" Header="Responding to change" Click="miRespondingToChange_Click"  Background="Black" />
+                <MenuItem x:Name="miBindingWindowExample" Header="Multi-Binding - IValueMultiConverter" Click="miBindingWindowExample_Click"  Background="Black" />
+
             </MenuItem>
 
 
