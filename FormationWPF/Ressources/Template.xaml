@@ -1,0 +1,72 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--
+       TEMPLATE 
+      Les Templates, Pourquoi les utiliser ?
+        
+      Les « Styles » peuvent uniquement modifier l'apparence de nos contrôles    
+      avec les propriétés par défaut de ce contrôle (Foreground,  Background, FontStyle...) .
+     Par exemple on peut définir la propriété Foreground sur blue et FontStyle sur italic sur un TextBlock
+    
+    
+     Tandis qu'avec   les « Templates », on peut  personaliser l’apparence de nos contrôles.
+        Dans les applications WPF, vous pouvez facilement créer vos propres modèles 
+        lorsque vous souhaitez personnaliser l'apparence visuelle d'un contrôle.
+      
+    Par exemple un bouton a la même apparence générale : un rectangle avec du texte. 
+       Si vous souhaitez créer un bouton arrondi, on utilisera un ControlTemplate  
+        
+    -->
+
+    <SolidColorBrush x:Key="myBorder" Color="CadetBlue" />
+    <ControlTemplate x:Key="MyTemplate" TargetType="{x:Type Button}">
+        <Border x:Name="border"
+                Background="#FFEBFFE9"
+                CornerRadius="20"
+                Padding="2"
+                BorderBrush="{StaticResource myBorder}"
+                BorderThickness="3"
+                Height="40"
+                >
+            <!--Positionner le contenu-->
+            <ContentPresenter Content="{TemplateBinding Button.Content}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
+        
+        <!--Ecouter d'evenement sur une valeur de propriété-->
+        <ControlTemplate.Triggers>
+            <Trigger Property="Button.IsMouseOver" Value="true">
+                <!--Le TargetName spécifie que le setter est destiné au Border nommé border dans le ControlTemplate-->
+                <!--<Setter TargetName="border" Property="Background" Value="Red" />-->
+                <Setter TargetName="border" Property="Background" >
+                    <Setter.Value>
+                        <!--LinearGradientBrush : Permet de peindre une zone avec un dégradé linéaire
+                        StartPoint et EndPoint definissent la direction du dégradé (Horizontalement, verticalement ou tout autre angle)
+                        -->
+                        <LinearGradientBrush StartPoint="0, 0" EndPoint="1,1">
+                            <!--GradientStop : définissent les couleurs utilisées dans le degradé-->
+                            <GradientStop Color="#FFECEFB8" Offset="0"/>
+                            <GradientStop Color="#FFE48D25" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="Button.IsPressed" Value="true">
+                <!--RenderTransform Permet de modifier l'apparence d'un élément d'un point d'origine vers un autre point-->
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <!-- ScaleTransform peremt d'agrandir ou   réduire un élement horizontalement ou verticalement-->
+                        <ScaleTransform ScaleX="0.8" ScaleY="0.8" />
+                    </Setter.Value>
+                </Setter>
+                <!--La  transformation se fera au centre de l' élément en definissant  la propriété RenderTransformOrigin (0,5, 0,5), -->
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5" />
+            </Trigger>
+
+        </ControlTemplate.Triggers>
+        
+        
+        
+    </ControlTemplate>
+
+</ResourceDictionary>

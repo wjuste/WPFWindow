@@ -28,5 +28,13 @@
         </StackPanel>
 
 
+        <!--Utilisation du Template -->
+        <Label Content="Utilisation de Template: " Height="28" x:Name="label5"/>
+        <Button Content="Submit" Height="50" Width="125" x:Name="button4" Template="{StaticResource MyTemplate}"/>
+        
+        <Button />
+
+
     </StackPanel>
+
 </Window>

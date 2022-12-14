@@ -12,6 +12,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Ressources/Style.xaml" />
+                <ResourceDictionary Source="Ressources/Template.xaml" />
                 <!--On peut ajouter d'autres ressources (Styles - templates)-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
