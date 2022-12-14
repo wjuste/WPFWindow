@@ -44,9 +44,46 @@ namespace FormationWPF.Controles
             image1.Source = new BitmapImage(new Uri(openPicture.FileName));
         }
 
+        /// <summary>
+        /// Charger l'audio ou vidéo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void loadMedia_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
 
+            openFileDialog.InitialDirectory = Environment.CurrentDirectory;
+
+            DialogResult result = openFileDialog.ShowDialog();
+            if(result == WinForms.DialogResult.Cancel)
+            {
+                return;
+            }
+
+            mediaElement.Source = new Uri(openFileDialog.FileName);
+            //   mediaElement.Play();
+        }
+
+        private void buttonPlay_Click(object sender, RoutedEventArgs e)
+        {
+            if(mediaElement.Source == null)
+            {
+                WinForms.MessageBox.Show("Vous devez selectionner un media");
+            } else
+            {
+                mediaElement.Play();
+            }
+        }
+
+        private void buttonPause_Click(object sender, RoutedEventArgs e)
+        {
+            mediaElement.Pause();
+        }
+
+        private void buttonStop_Click(object sender, RoutedEventArgs e)
+        {
+            mediaElement.Stop();
         }
     }
 }

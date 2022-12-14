@@ -38,6 +38,13 @@
                 <MenuItem x:Name="miEnregistrer" Header="Enregistrer" Click="miEnregistrer_Click" Background="Black" />
             </MenuItem>
 
+            <MenuItem x:Name="mBinding" Header="Binding">
+                <MenuItem x:Name="miBinding" Header="Binding  intro code XAML" Click="miBinding_Click" Background="Black" />
+                <MenuItem x:Name="miUpdateSourceTrigger" Header="UpdateSourceTrigger: PropertyChange - LostFocus - Explicit" Click="miUpdateSourceTrigger_Click"  Background="Black" />
+                <MenuItem x:Name="miValueConverter" Header="Convertisseur simple, avec IValueConverter" Click="miValueConverter_Click"  Background="Black" />
+                <MenuItem x:Name="miRespondingToChange" Header="Responding to change" Click="miRespondingToChange_Click"  Background="Black" />
+            </MenuItem>
+
         </Menu>
         
     </DockPanel>

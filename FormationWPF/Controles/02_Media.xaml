@@ -20,20 +20,28 @@
 
         <!--Ajouter une Vidéo/Audio
         Le Controle MediaElement permet d'insérer des médias (ex : type vidéo ou audio)
+        LoadedBehavior="Manual"  permet de l'utiliser manuellement contrairement à UnloadedBehavior="Manual"
         -->
         <Grid Margin="0,30" Height="330">
             <Label Content="MediaElement : " x:Name="label2" Width="140" Height="36" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="27,0,0,0"
                    FontWeight="Bold" FontSize="16"/>
-            <MediaElement x:Name="mediaElement" UnloadedBehavior="Manual" Width="400" Height="250"
-                          VerticalAlignment="Top" HorizontalAlignment="Left" Margin="187,20,0,0"/>
+            <Border BorderBrush="#FF8F9292" BorderThickness="2"  Width="400" Height="250"
+                          VerticalAlignment="Top" HorizontalAlignment="Left" Margin="187,20,0,0">
+                <MediaElement x:Name="mediaElement" LoadedBehavior="Manual" />
+            </Border>
             <Button VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Width="100" Margin="636,0,0,0" 
                     x:Name="loadMedia" Click="loadMedia_Click">
                 <TextBlock TextWrapping="Wrap" Height="50" Width="90" Text="Ajouter une vidéo /audio" TextAlignment="Center" FontWeight="Bold" Padding="5"/>
             </Button>
 
-            <Button Content="Play" x:Name="buttonPlay" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="80" Margin="187,289,0,0"/>
-            <Button Content="Pause" x:Name="buttonPause" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="80" Margin="351,289,0,0"/>
-            <Button Content="Stop" x:Name="buttonStop" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="80" Margin="512,289,0,0"/>
+            <Button Content="Play" x:Name="buttonPlay" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="80" 
+                   Click="buttonPlay_Click"  Margin="187,289,0,0"/>
+            <Button Content="Pause" x:Name="buttonPause" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="80" 
+                  Click="buttonPause_Click"  Margin="351,289,0,0"/>
+            <Button Content="Stop" x:Name="buttonStop" VerticalAlignment="Top" HorizontalAlignment="Left" Height="25" Width="80" 
+                   Click="buttonStop_Click" Margin="512,289,0,0"/>
+            
+            
         </Grid>
     </StackPanel>
 </Window>

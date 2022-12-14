@@ -56,6 +56,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Binding\01_Binding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Binding\02_UpdateSourceTrigger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Binding\03_ValueConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Binding\04_RespondingToChange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controles\01_ControlesCommunsWPF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,6 +100,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Binding\01_Binding.xaml.cs">
+      <DependentUpon>01_Binding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Binding\02_UpdateSourceTrigger.xaml.cs">
+      <DependentUpon>02_UpdateSourceTrigger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Binding\03_ValueConverter.xaml.cs">
+      <DependentUpon>03_ValueConverter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Binding\04_RespondingToChange.xaml.cs">
+      <DependentUpon>04_RespondingToChange.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controles\01_ControlesCommunsWPF.xaml.cs">
       <DependentUpon>01_ControlesCommunsWPF.xaml</DependentUpon>
     </Compile>
@@ -93,6 +121,7 @@
     <Compile Include="Controles\NumericUpDown.xaml.cs">
       <DependentUpon>NumericUpDown.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\YesNoToBooleanConverter.cs" />
     <Compile Include="Fichier\01_OpenFileDialog.xaml.cs">
       <DependentUpon>01_OpenFileDialog.xaml</DependentUpon>
     </Compile>
@@ -151,6 +180,7 @@
     <Compile Include="MiseEnPage\06_Canvas.xaml.cs">
       <DependentUpon>06_Canvas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs" />
     <Compile Include="NavigationWindow.xaml.cs">
       <DependentUpon>NavigationWindow.xaml</DependentUpon>
     </Compile>
@@ -182,5 +212,11 @@
   <ItemGroup>
     <Resource Include="MediaImages\Water fallback.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Binding\Binding.txt" />
+    <Content Include="MediaImages\SampleVideo1.mp4" />
+    <Content Include="MediaImages\TT++ - Piste 12 - V1 Douce.wma" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

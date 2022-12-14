@@ -1,4 +1,5 @@
-﻿using FormationWPF.Controles;
+﻿using FormationWPF.Binding;
+using FormationWPF.Controles;
 using FormationWPF.Fichier;
 using FormationWPF.MiseEnPage;
 using System;
@@ -135,6 +136,30 @@ namespace FormationWPF
         {
             _02_Media media = new _02_Media();
             media.ShowDialog();
+        }
+
+        private void miBinding_Click(object sender, RoutedEventArgs e)
+        {
+            _01_Binding  binding = new _01_Binding();
+            binding.ShowDialog();
+        }
+
+        private void miUpdateSourceTrigger_Click(object sender, RoutedEventArgs e)
+        {
+            _02_UpdateSourceTrigger updateSourceTrigger = new _02_UpdateSourceTrigger();
+            updateSourceTrigger.ShowDialog();
+        }
+
+        private void miValueConverter_Click(object sender, RoutedEventArgs e)
+        {
+            _03_ValueConverter converter = new _03_ValueConverter();
+            converter.ShowDialog();
+        }
+
+        private void miRespondingToChange_Click(object sender, RoutedEventArgs e)
+        {
+            _04_RespondingToChange respondingToChange = new _04_RespondingToChange();
+            respondingToChange.ShowDialog();
         }
     }
 }

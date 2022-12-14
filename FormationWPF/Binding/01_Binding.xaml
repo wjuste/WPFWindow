@@ -1,0 +1,24 @@
+﻿<Window x:Class="FormationWPF.Binding._01_Binding"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormationWPF.Binding"
+        mc:Ignorable="d"
+        Title="_01_Binding" Height="250" Width="300">
+    <StackPanel>
+        <!--
+            La liaison de données est definie dans le code XAML 
+            Le mot clé Binding décrit la relation pour la proprité Text et l'objet source (txtValue)
+            Path (chemin) : note la propriété à laquelle on souhaite se lier
+            On l'omettre : {Binding Path=Text, ...}  ou {Binding Text, ...}
+            ElementName nous permet de nous connecter à un autre élément de l'interface utilisateur (ici : TextBox) 
+            en tant que source
+        -->
+        <TextBox x:Name="txtValue" Margin="20"  />
+        <WrapPanel>
+            <TextBlock Text="Value: " FontWeight="Bold" Margin="20, 0"/>
+            <TextBlock Text="{Binding ElementName=txtValue, Path=Text}"/>
+        </WrapPanel>
+    </StackPanel>
+</Window>

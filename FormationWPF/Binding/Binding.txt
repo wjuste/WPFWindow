@@ -1,0 +1,27 @@
+﻿Binding (Liaison de données)
+
+La liaison de donnée  est le processus qui établit une connexion entre une interface (XAML) de l'application et les données qu'elle affiche. 
+C'est une technique qui met en relation des données métier et une interface utilisateur. 
+Elle permet de faire en sorte que lorsque la valeur d'une propriété est modifiée, les éléments graphiques auxquels 
+elle est lié changent également et vice-versa. 
+Par exemple, si un utilisateur modifie la valeur d'une TextBox , la valeur de propriété liée est automatiquement mise à jour. 
+
+Chaque liaison est composé de quatre éléments : 
+    - Un objet cible 
+    - Une propriété cible 
+    - Une source de liaison 
+    - Une propriété source 
+
+Par exemple, si l'on désire lier le contenu d'une TextBox à la propriété d'un objet de type Client, 
+l'objet cible sera TextBox, la propriété cible sera la propriété Text, la valeur à utiliser sera Nom et l'objet source sera de type Client. 
+
+WPF support quatre mode de liaison différents : 
+    - OneWay : Les modifications apportés à l'objet source du binding sont répercutées sur l'interface utilisateur, mais les modificatin effectuées par 
+                       l'utilisateur sur l'interface graphique n'affectent pas l'objet source du binding.  Ce mode de liaison est approprié sir le 
+                       contrôle lié doit être en lecture seule
+    - TwoWay : 
+            Avec ce mode tout changement apporté sur l'objet source modifie l'interface utilisateur et tout changement 
+            effectué sur l'interface graphique sont répercutés sur l'objet source du binding.
+            On utilise ce mode si on veut autoriser les utilisateurs à mettre à jour les objets métiers
+       
+    
