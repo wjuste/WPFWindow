@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormationWPF", "FormationWPF\FormationWPF.csproj", "{CADDFBC8-2DC4-476E-944D-6380BFDEE928}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizApp", "QuizApp\QuizApp.csproj", "{A9C91C68-5744-4FF2-B024-436994195C9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CADDFBC8-2DC4-476E-944D-6380BFDEE928}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CADDFBC8-2DC4-476E-944D-6380BFDEE928}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CADDFBC8-2DC4-476E-944D-6380BFDEE928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C91C68-5744-4FF2-B024-436994195C9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C91C68-5744-4FF2-B024-436994195C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C91C68-5744-4FF2-B024-436994195C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C91C68-5744-4FF2-B024-436994195C9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
