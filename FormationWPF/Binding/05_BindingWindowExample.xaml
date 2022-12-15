@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:FormationWPF.Binding"
         xmlns:localconv="clr-namespace:FormationWPF.Converters"
         mc:Ignorable="d"
-        Title="_05_BindingWindowExample" Height="450" Width="800">
+        Title="_05_BindingWindowExample" Height="650" Width="800"
+        DataContext = "{Binding RelativeSource = {RelativeSource Self}}" Closing="Window_Closing"
+        >
     
     <Window.Resources>
         <localconv:MyMultiBindingValueConverter x:Key="myMultiBindingValueConverter" />
@@ -18,6 +20,11 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
@@ -64,7 +71,7 @@
                 On utilise le Convertisseur  IMultiValueConverter pour s'assurer que nous trouvons tous les éléments individuels dans
                 le bloc IMultiValueConverter et traitez chaque valeur séparément.
         -->
-        <!--Source-->
+        <!--Cible-->
         <TextBox Grid.Row="5" Grid.ColumnSpan="2" Height="30" Width="760">
             <TextBox.Text>
                 <MultiBinding Converter="{StaticResource myMultiBindingValueConverter}" UpdateSourceTrigger="PropertyChanged">
@@ -73,6 +80,41 @@
                 </MultiBinding>
             </TextBox.Text>
         </TextBox>
+        
+        
+        <!--DataContext-->
+        <!--
+            Le process de "Data Binding" est effectué automatiquement lorsque l'on assigne 
+            la liste à la propriété ItemsSource du contrôle ListView 
+            ItemsSource permet de se lier aux données (ex EvtLst)
+        -->
+        <ListView x:Name="lstView1" Grid.Row="6" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="5" Background="Azure" 
+                  ItemsSource="{Binding EvtLst}">
+            <ListView.View>
+                <GridView>
+                    <!--DisplayMemberBinding permet d'afficher un membre/une propriété de l'objet
+                        Le mot clé Binding décrit la relation pour la propriété (ex: Title)
+                    -->
+                    <GridViewColumn Width="150" Header="Titre" DisplayMemberBinding="{Binding Title}"/>
+                    <GridViewColumn Width="150" Header="Description" DisplayMemberBinding="{Binding Description}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Grid.Row="9"  x:Name="BtnAdd" Content="SaveEvent" Grid.ColumnSpan="2" Click="BtnAdd_Click"
+                Template="{StaticResource MyTemplate}" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="200" Height="40"/>
+         
+        
+            <!--Recuperation de title-->
+        <TextBlock Text="---------------------Binding direct sur la ListView--------------------" Grid.Row="11" Grid.ColumnSpan="2" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+        
+        <TextBox Grid.Row="12" Grid.ColumnSpan="2" x:Name="TBoxTitle2" Width="200" Height="30" 
+                 Text="{Binding ElementName=lstView1, Path = SelectedItem.Title}" />
+        
+        <Button Grid.Row="13"  x:Name="BtnSaveOrUpdate" Content="Sauvegarder le changement sur l'élément selectionné" 
+                Grid.ColumnSpan="2" Click="BtnSaveOrUpdate_Click"
+                Template="{StaticResource MyTemplate}" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="360" Height="40"/>
 
     </Grid>
 </Window>
