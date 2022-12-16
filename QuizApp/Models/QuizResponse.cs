@@ -15,5 +15,10 @@ namespace QuizApp.Models
         //ManyToOne
         public QuizQuestion Question { get; set; }
         public int? QuestionId { get; set; }
+
+        public override string ToString()
+        {
+            return RespText;
+        }
     }
 }

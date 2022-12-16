@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" Closing="Window_Closing">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="173*"/>
+            <ColumnDefinition  Width="473*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="64*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Choisir le Quiz"  Height="40" FontSize="16"/>
+        <ComboBox Grid.Column="1" x:Name="ComboQuizzes" Height="50" Width="460"/>
+
+        <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Demarrer" x:Name="BtnStart" Click="BtnStart_Click" Height="60" Width="700" FontSize="18"/>
     </Grid>
 </Window>

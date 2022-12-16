@@ -20,7 +20,7 @@ namespace QuizApp.Models
 
         //ManyToOne 
         [ForeignKey("QuizId")]
-        public User Quiz { get; set; }
+        public Quiz Quiz { get; set; }
         public int? QuizId { get; set; }
 
 

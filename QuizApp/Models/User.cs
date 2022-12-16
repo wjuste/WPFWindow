@@ -17,5 +17,9 @@ namespace QuizApp.Models
         [NotMapped]
         public int TotalPoints { get; set; }
 
+        public static implicit operator User(Quiz v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

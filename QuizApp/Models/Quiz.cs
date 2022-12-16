@@ -17,5 +17,10 @@ namespace QuizApp.Models
         public QuizCategory Category { get; set; }
 
         public int? CategoryId { get; set; } //int? : Ce champ peut accpeter des valeurs null
+
+        public override string ToString()
+        {
+            return Title;
+        }
     }
 }

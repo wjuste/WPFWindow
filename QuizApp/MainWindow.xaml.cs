@@ -1,4 +1,8 @@
-﻿using System;
+﻿using QuizApp.Contexts;
+using QuizApp.Models;
+using QuizApp.Repositories;
+using QuizApp.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +24,45 @@ namespace QuizApp
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private IQuizService quizService;
+        private MyDbContext db;
+
         public MainWindow()
         {
             InitializeComponent();
+            db = new MyDbContext();
+            quizService = new QuizService(new QuizRepository(db));
+        }
+
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ComboQuizzes.ItemsSource = quizService.FindQuizzes();
+        }
+
+
+        private void BtnStart_Click(object sender, RoutedEventArgs e)
+        {
+            if(ComboQuizzes.SelectedItem != null)
+            {
+                //Récuperer le Quiz Sélectionné 
+                Quiz selectedQuiz = ComboQuizzes.SelectedItem as Quiz;
+                //Créer une fenêtre QuizWindow et lui transmet le Quiz 
+                QuizWindow qw = new QuizWindow();
+                qw.CurrentQuizTest = new QuizTest { Quiz = selectedQuiz, CreationDate = DateTime.Now};
+
+                qw.ShowDialog();
+
+            } else
+            {
+                MessageBox.Show("Vous devez selectionner un Quiz !");
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            db.Dispose();
         }
     }
 }
