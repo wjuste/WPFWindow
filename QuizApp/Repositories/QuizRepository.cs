@@ -53,6 +53,7 @@ namespace QuizApp.Repositories
         public List<QuizResponse> FindResponses(int questionId)
         {
            //Condition ==> Where 
+           return db.QuizResponses.AsNoTracking().Where(r => r.QuestionId == questionId).ToList();  
         }
     }
 }

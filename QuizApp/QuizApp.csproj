@@ -71,6 +71,10 @@
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\QuizRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Services\IQuizService.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\QuizService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
